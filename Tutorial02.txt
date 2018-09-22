@@ -1,0 +1,48 @@
+Latihan Project Viral
+	1. Ganti baris @RequestMapping(“/viral”) menjadi @RequestMapping(“/viral2jari”).
+		Kemudian run kembali.
+		a. Apakah terjadi compile error? 
+			Tidak
+		b. Coba akses localhost:8080/viral, berikan alasan dan jelaskan apa yang terjadi.
+			Terjadi error, karena tidak dapat memetakan permintaan HTTP ke method handler yang harusnya /viral2jari
+		
+		c. Apakah Kegunaan @RequestMapping(“/viral”)
+			anotasi untuk memetakan permintaan web ke method dalam request-handling dengan bentuk yang fleksibel
+		
+		
+	2. Ganti nama method index() menjadi nama method viral()
+		a. Apakah terjadi compile error? tidak
+		b. Coba akses localhost:8080/viral, berikan alasan dan jelaskan apa yang terjadi.
+		   Tampilan web seperti sebelumnya saat menggunakan method index(), karena penamaan method tidak menyebabkan error
+		
+	3. Ganti string return type menjadi menjadi return “viral2jari”
+		a. Apakah terjadi compile error? tidak
+		b. Coba akses localhost:8080/viral, berikan alasan dan jelaskan apa yang terjadi.
+			Terjadi error karena controller tidak dapat memanggil view untuk viral2jari
+		c. Apakah kegunaan return type pada method controller tersebut?
+			untuk mengembalikan view yang akan ditampilkan
+			
+Latihan​ ​Request​ ​Parameter	
+	1. Mengapa tulisan “In My feeling” pada thymeleaf challenge tidak pernah muncul di browser?
+	
+	2. Ubah nilai anotasi Request Mapping “/challenge” menjadi “/viral/challenge”. Deskripsikan hasil pada browser dan kembalikan ke bentuk sebelumnya!
+		Terjadi error jika hanya diakses dengan “/challenge” , harus di tuliskan “/viral/challenge” pada browser agar tidak error
+		
+	3. Akses localhost:8080/challenge.
+		a. Deskripsikan hasilnya
+			Terjadi error karna tidak ada nilai yang dimasukan pada @RequestParam
+		b. Ubah methodnya menjadi seperti di bawah ini, deskripsikan lalu kembalikan ke bentuk awal!
+			Parameter "name" tidak memiliki nilai sehingga yang di tampilkan null, tidak terjadi error karena required=false
+		c. Ubah methodnya menjadi seperti di bawah ini, deskripsikan lalu kembalikan ke bentuk awal!
+			Nilai pada parameter name menjadi default "kiki" jika tidak ada nilai yang dimasukan
+			
+Latihan​ ​Path Variable
+	1. Akses ​localhost:8080/challenge/ , Apakah hasil dari halaman tersebut?
+		Hal ini terjadi request mapping pada method challenge()
+	2. Ubah method challengePath menjadi seperti berikut, 
+		Akses​ ​localhost:8080/challenge/
+		Apakah hasil dari halaman tersebut?
+		Terjadi error
+	3. Akses​ ​localhost:8080/challenge/kiki
+		Apakah hasil dari halaman tersebut?
+		Menampilkan view dari challenge.html denga value name yang diberikan
